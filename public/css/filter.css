@@ -1,0 +1,133 @@
+.filter-container {
+  width: 100%;
+  padding: 1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0.5rem;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.filter-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-wrapper a {
+  text-decoration: none;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: 0.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.filter-item:hover {
+  transform: scale(1.05);
+}
+
+.filter-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0px;
+  height: 3px;
+  background-color: #9a9a9aa7;
+  transition: width 0.2s ease;
+}
+
+.filter-item:hover::after {
+  width: 50%;
+}
+
+.filter-item:active {
+  transform: scale(0.95);
+}
+
+.filter-item .material-symbols-outlined {
+  color: #6a6a6a;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.filter-item:hover .material-symbols-outlined {
+  color: #222;
+}
+
+.filter-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #6a6a6a;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.filter-item:hover .filter-label {
+  color: #222;
+}
+
+@media (max-width: 1024px) {
+  .filter-item {
+    min-width: 100px;
+    margin: 0.5rem;
+  }
+
+  .filter-item .material-symbols-outlined {
+    font-size: 1.6rem;
+  }
+
+  .filter-label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-item {
+    min-width: 80px;
+    margin: 0.4rem;
+  }
+
+  .filter-item .material-symbols-outlined {
+    font-size: 1.4rem;
+  }
+
+  .filter-label {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .filter-container {
+    padding: 0.5rem;
+  }
+
+  .filter-item {
+    min-width: 70px;
+    margin: 0.3rem;
+  }
+
+  .filter-item .material-symbols-outlined {
+    font-size: 1.3rem;
+  }
+
+  .filter-label {
+    font-size: 0.6rem;
+  }
+}

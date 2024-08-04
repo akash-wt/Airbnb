@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings">
+      <span class="material-symbols-outlined explore" style="font-size: 3rem">explore</span>
+    </a>
+
+    <div class="navbar-nav">
+      <a class="nav-link active" aria-current="page" href="/listings" title="Explore more Places">Explore</a>
+    </div>
+
+    <div class="navbar-nav   ms-auto">
+      <nav class="navbar">
+        <div class="container-fluid p-0">
+          <form class="d-flex search-form" role="search" method="GET" action="/listings/search">
+            <input class="search-inp" type="search" name="query" placeholder="Search Destination">
+            <button class="btn-search" type="button">
+              <span class="material-symbols-outlined search-icon">search</span>
+            </button>
+          </form>
+        </div>
+      </nav>
+    </div>
+
+
+    <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+     
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new" title="Add your home">Airbnb your home</a>
+        <% if (!currUser) { %>
+          <a class="nav-link" href="/signup">Sign up</a>
+          <a class="nav-link" href="/login">Login</a>
+        <% } %>
+        <% if (currUser) { %>
+          <a class="nav-link" href="/logout">Logout</a>
+
+          <div class="d-flex justify-content-start">
+            <div class="login-username ms-lg-3" title="Username">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                <%= currUser.username %>
+            </div>
+        </div>
+        
+        
+        
+        
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

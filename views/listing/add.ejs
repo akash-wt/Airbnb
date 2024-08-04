@@ -1,0 +1,105 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+
+<div class="form-container mt-4 mb-5">
+  <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data" >
+    <div class="form-group">
+      <label for="title" class="form-label">Title</label>
+      <input
+        id="title"
+        type="text"
+        name="listing[title]"
+        class="form-control"
+        placeholder="Title"
+        required
+        autocapitalize="on"
+      />
+    
+    </div>
+    <div class="form-group">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        id="description"
+        name="listing[description]"
+        placeholder="Description"
+        class="form-control"
+        required
+        autocapitalize="sentences"
+      ></textarea>
+    </div>
+
+<div class="form-group">
+  <label for="selectedCategory" class="form-label"> Category</label>
+  <select name="listing[category]" id="selectedCategory" required>
+
+    <option value="Arctic" >Arctic</option>
+    <option value="Top cities">Top cities</option>
+    <option value="Sailing">Sailing</option>
+    <option value="Mountains">Mountains</option>
+    <option value="Houseboat">Houseboat</option>
+    <option value="Castle">Castle</option>
+    <option value="Amazing pools">Amazing pools</option>
+    <option value="Villa">Villa</option>
+    <option value="Rooms">Rooms</option>
+  </select>
+</div>
+
+
+
+    <div class="form-group">
+      <label for="image" class="form-label">Upload Image</label>
+      <input
+        type="file"
+        class="form-control"
+        name="listing[image]"
+        required
+      />
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="price" class="form-label">Price</label>
+        <input
+          id="price"
+          type="number"
+          class="form-control"
+          name="listing[price]"
+          placeholder="Price"
+          required
+        />
+ 
+      </div>
+      <div class="form-group col-md-8">
+        <label for="location" class="form-label">Location</label>
+        <input
+          id="location"
+          type="text"
+          name="listing[location]"
+          placeholder="Location"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="country" class="form-label">Country</label>
+      <input
+        id="country"
+        type="text"
+        name="listing[country]"
+        placeholder="Country"
+        class="form-control"
+        required
+      />
+    </div>
+    <button class="btn-submit">Add</button>
+  </form>
+</div>
+
+
+
+
+<form action="">
+
+
+
+</form>
+

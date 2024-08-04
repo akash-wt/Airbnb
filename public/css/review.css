@@ -1,0 +1,128 @@
+/* Container for the reviews section */
+.reviews-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Reviews Form Styles */
+  .reviews-section .form-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reviews-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .reviews-section .starability-heartbeat input {
+    display: none;
+  }
+  
+  .reviews-section .starability-heartbeat label {
+    font-size: 1.5rem;
+    color: #ddd;
+    transition: color 0.3s ease;
+  }
+  
+  .reviews-section .starability-heartbeat input:checked ~ label {
+    color: #fe424d;
+  }
+  
+  .reviews-section .starability-heartbeat label:hover,
+  .reviews-section .starability-heartbeat label:hover ~ label {
+    color: #fe424d;
+  }
+  
+  .reviews-section textarea.form-control {
+    resize: vertical;
+    transition: border-color 0.3s ease;
+  }
+  
+  .reviews-section textarea.form-control:focus {
+    border-color: #007bff;
+  }
+  
+  /* Reviews Section Styles */
+  .reviews-section .card {
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .reviews-section .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reviews-section .card-body {
+    padding: 20px;
+  }
+  
+  .reviews-section .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .reviews-section .card-text {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .reviews-section .btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .reviews-section .btn-outline-success:hover {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  /* Delete Button Styles */
+  .reviews-section .btn-outline-dark {
+    border-color: #343a40;
+    color: #343a40;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .reviews-section .btn-outline-dark:hover {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .reviews-section .card {
+      margin-bottom: 1rem;
+    }
+  
+    .reviews-section .card-body {
+      padding: 15px;
+    }
+  
+    .reviews-section .form-container {
+      padding: 15px;
+    }
+  
+    .reviews-section textarea.form-control {
+      font-size: 0.875rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .reviews-section .form-container {
+      padding: 10px;
+    }
+  
+    .reviews-section textarea.form-control {
+      font-size: 0.75rem;
+    }
+  }
+  
+  .allReviewsHeading{
+    text-align: center;
+  }

@@ -1,0 +1,28 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+<p class="searchFound mt-2 mb-4"><i><%= listings.length %> Result founds...</i> <i class="filter-query"><%= filter.charAt(0).toUpperCase() + filter.slice(1).toLowerCase() %> </i></p>
+
+
+
+<div class="row row-cols-lg-3 row-cols-md-2 mt-4 ">
+
+    <%for(let listing of listings){%>
+    <a class="listing-link" href="/listings/<%= listing._id %>/show">
+      <div class="card listing-card col p-3">
+        <img
+          src="<%= listing.image.url %>"
+          class="card-img-top"
+          alt="listing-image"
+        />
+        <div class="card-body mt-4">
+          <p class="card-text">
+            <b> <%= listing.title %> </b> <br />
+            &#8377; <%= listing.price ? listing.price.toLocaleString('en-IN') :
+            'N/A' %>/Night
+          </p>
+        </div>
+      </div>
+    </a>
+    <%}%>
+  </div>
+
+ 

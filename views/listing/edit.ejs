@@ -1,0 +1,59 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+  <div class="form-container mt-4 mb-5">
+    <form action="/listings/<%= listing._id %>?_method=PUT" method="POST" novalidate class="needs-validation"
+      enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="listing[title]" class="form-control" value="<%= listing.title %>" required />
+      </div>
+      <div class="form-group">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="listing[description]" class="form-control" required>
+<%=listing.description.trim()%></textarea>
+      </div>
+
+
+      <div class="form-group">
+        <label for="selectedCategory" class="form-label"> Category</label>
+        <select name="listing[category]" id="selectedCategory">
+          <option value="Arctic" <%= listing.category==="Arctic" ? "selected" : "" %>>Arctic</option>
+          <option value="Top cities" <%= listing.category==="Top cities" ? "selected" : "" %>>Top cities</option>
+          <option value="Sailing" <%= listing.category==="Sailing" ? "selected" : "" %>>Sailing</option>
+          <option value="Mountains" <%= listing.category==="Mountains" ? "selected" : "" %>>Mountains</option>
+          <option value="Houseboat" <%= listing.category==="Houseboat" ? "selected" : "" %>>Houseboat</option>
+          <option value="Castle" <%= listing.category==="Castle" ? "selected" : "" %>>Castle</option>
+          <option value="Amazing pools" <%= listing.category==="Amazing pools" ? "selected" : "" %>>Amazing pools
+          </option>
+          <option value="Villa" <%= listing.category==="Villa" ? "selected" : "" %>>Villa</option>
+          <option value="Rooms" <%= listing.category==="Rooms" ? "selected" : "" %>>Rooms</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        Current Listing Image
+        <div>
+          <img src="<%=OriginalImageUrl %>" alt="Image" height="200" width="300" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="image" class="form-label">Update Image</label>
+        <input type="file" class="form-control" name="listing[image]" />
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input type="number" class="form-control" name="listing[price]" value="<%= listing.price %>" required />
+        </div>
+        <div class="form-group col-md-8">
+          <label for="location" class="form-label">Location</label>
+          <input type="text" name="listing[location]" value="<%= listing.location %>" class="form-control" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="country" class="form-label">Country</label>
+        <input type="text" name="listing[country]" value="<%= listing.country %>" class="form-control" required />
+      </div>
+      <button type="submit" class="btn-submit">Edit</button>
+    </form>
+  </div>

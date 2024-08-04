@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+  background-color: #f0f4f8;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Login Page Styles */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Form Container */
+.login {
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%; /* Ensure full width up to max-width */
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Gradient background */
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fade-in 1s ease;
+}
+
+/* Gradient Background for entire form container */
+@keyframes fade-in {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+h4 {
+  color: #333;
+  font-size: 1.75rem; /* Larger font size for emphasis */
+  margin-bottom: 1.5rem; /* Increased spacing below the heading */
+  text-align: center;
+  animation: slide-in 0.5s ease-out;
+}
+
+@keyframes slide-in {
+  from {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Form Styles */
+.login form {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Gradient background for the form itself */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  width: 100%; /* Ensure full width of the container */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #ff5a5f; /* Airbnb red */
+  box-shadow: 0 0 0 0.2rem rgba(255, 90, 95, 0.25); /* Airbnb red shadow */
+}
+
+/* Invalid feedback */
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: none; /* Initially hidden */
+}
+
+.form-control:invalid + .invalid-feedback {
+  display: block;
+}
+
+/* Button Styles */
+.btn-submit {
+  background-color: #ff5a5f !important;  /* Airbnb red */
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  margin-top: 1rem; /* Added margin for spacing */
+  width: 100%; /* Full width of container */
+}
+
+.btn-submit:hover {
+  background-color: #e04f54;
+  transform: translateY(-2px);
+}
+
+.btn-submit:active {
+  background-color: #c53c44;
+  transform: translateY(0);
+}
+
+/* Link Styles */
+.signup-link {
+  color: #007bff;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+  color: #0056b3;
+}
+
+/* Media Queries */
+
+/* Smaller screens (tablets and below) */
+@media (max-width: 768px) {
+  .login {
+      padding: 1.5rem;
+  }
+
+  h4 {
+      font-size: 1.5rem;
+  }
+
+  .form-control {
+      font-size: 0.875rem;
+  }
+
+  .btn-submit {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .login {
+      padding: 1rem;
+  }
+
+  h4 {
+      font-size: 1.25rem;
+  }
+
+  .form-control {
+      font-size: 0.75rem;
+  }
+
+  .btn-submit {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.75rem;
+  }
+}

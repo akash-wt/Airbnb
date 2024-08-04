@@ -1,0 +1,126 @@
+
+/* Container for form */
+.form-container {
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.valid-feedback, .invalid-feedback {
+    font-size: 14px;
+    color: #28a745; /* Success color */
+    display: none;
+}
+
+.invalid-feedback {
+    color: #dc3545; /* Error color */
+}
+
+.form-control:valid ~ .valid-feedback {
+    display: block;
+}
+
+.form-control:invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* Row for form fields */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-group.col-md-4, .form-group.col-md-8 {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.form-group.col-md-4 {
+    max-width: 33.3333%;
+}
+
+.form-group.col-md-8 {
+    max-width: 66.6666%;
+}
+
+/* Submit button styles */
+.btn-submit {
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #495057;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group.col-md-4, .form-group.col-md-8 {
+        max-width: 100%;
+    }
+}
+
+/* General styles for the select element */
+#selectedCategory {
+    width: 40%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    
+     cursor: pointer;
+     background-color: #ffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+
+#selectedCategory:hover {
+    background-color:#f0f4f8;
+    
+}
+
+#selectedCategory:focus {
+    outline: none; /* Remove default outline */
+}
+

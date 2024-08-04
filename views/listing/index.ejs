@@ -1,0 +1,85 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+
+<div class="container-filter mt-2 mb-2 cols-md-5 cols-xm-5 ">
+  <div class="filter-container">
+    <div class="filter-wrapper">
+
+      <a href="/filters/amazing pools">
+        <div class="filter-item">
+          <span class="material-symbols-outlined">pool</span>
+          <span class="filter-label">Amazing pools</span>
+        </div>
+      </a>
+      <a href="/filters/rooms">
+        <div class="filter-item">
+          <span class="material-symbols-outlined">roofing</span>
+          <span class="filter-label">Rooms</span>
+        </div>
+      </a>
+      <a href="/filters/mountains">
+        <div class="filter-item">
+          <span class="material-symbols-outlined">filter_hdr</span>
+          <span class="filter-label">Mountains</span>
+        </div>
+      </a>
+      <a href="/filters/villa">
+        <div class="filter-item">
+          <span class="material-symbols-outlined">villa</span>
+          <span class="filter-label">Villa</span>
+        </div></a
+      >
+      <a href="/filters/houseboat">
+        <div class="filter-item">
+          <span class="material-symbols-outlined">houseboat</span>
+          <span class="filter-label">Houseboat</span>
+        </div></a
+      >
+      <a href="/filters/castle">
+        <div class="filter-item">
+          <span class="material-symbols-outlined">castle</span>
+          <span class="filter-label">Castle</span>
+        </div></a
+      >
+      <a href="/filters/sailing">
+        <div class="filter-item">
+          <span class="material-symbols-outlined">sailing</span>
+          <span class="filter-label">Sailing</span>
+        </div>
+      </a>
+      <a href="/filters/top cities">
+        <div class="filter-item">
+          <span class="material-symbols-outlined">location_city</span>
+          <span class="filter-label">Top cities</span>
+        </div>
+      </a>
+
+      <a href="/filters/arctic">
+        <div class="filter-item">
+          <span class="material-symbols-outlined"> ac_unit </span>
+          <span class="filter-label">Arctic</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="row row-cols-lg-3 row-cols-md-2">
+  <%for(let listing of allListing){%>
+  <a class="listing-link" href="/listings/<%= listing._id %>/show">
+    <div class="card listing-card col p-3">
+      <img
+        src="<%= listing.image.url %>"
+        class="card-img-top"
+        alt="listing-image"
+      />
+      <div class="card-body mt-4">
+        <p class="card-text">
+          <b> <%= listing.title %> </b> <br />
+          &#8377; <%= listing.price ? listing.price.toLocaleString('en-IN') :
+          'N/A' %>/Night
+        </p>
+      </div>
+    </div>
+  </a>
+  <%}%>
+</div>
