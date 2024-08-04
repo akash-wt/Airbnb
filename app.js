@@ -101,6 +101,9 @@ app.use("/filters",filters);
 
 
 // Catch-all route
+app.get("/",(req,res)=>{
+  res.redirect("/listings");
+})
 
 app.all("*", (req, res, next) => {
   next(new expressError(404, "Page not found"));
