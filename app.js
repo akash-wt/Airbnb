@@ -44,7 +44,10 @@ main()
     console.error("Database connection error:", err);
   });
 async function main() {
-  await mongoose.connect(db_url);
+  await mongoose.connect(db_url,{ useNewUrlParser: true, 
+  useUnifiedTopology: true,
+  ssl: true,
+  sslValidate: false });
 }
 
 // Express session
