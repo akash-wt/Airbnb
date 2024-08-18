@@ -33,8 +33,8 @@ const UsersRouter=require("./routes/users.js");
 const filters=require("./routes/filter.js");
 // mongoose connection
 
-// const url = "mongodb://127.0.0.1:27017/Airbnb";
-const db_url=process.env.ATLAS_URL;
+const url = "mongodb://127.0.0.1:27017/Airbnb";
+// const db_url=process.env.ATLAS_URL;
 
 main()
   .then(() => {
@@ -44,23 +44,23 @@ main()
     console.error("Database connection error:", err);
   });
 async function main() {
-  await mongoose.connect(db_url);
+  await mongoose.connect(url);
 }
 
 // Express session
 
-const dbStore=MongoStore.create({
-    mongoUrl: db_url,
-    touchAfter: 24 * 3600,
-    crypto:{
-      secret:process.env.SECRET,
-    }
+// const dbStore=MongoStore.create({
+//     mongoUrl: db_url,
+//     touchAfter: 24 * 3600,
+//     crypto:{
+//       secret:process.env.SECRET,
+//     }
   
-  })
+//   })
 
 
 const sessionOption = {
-  store:dbStore,
+  // store:dbStore,
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
@@ -121,3 +121,5 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   console.log("server is connected ", port);
 });
+
+
