@@ -22,7 +22,7 @@ This is a clone of the Airbnb website, designed to replicate the core functional
 
 ## .ENV Configuration
 
-To run this project, you'll need to set up environment variables. Create a `.env` file in the `backend` directory with the following content:
+To run this project, you'll need to set up environment variables. Create a `.env` file in the `main` directory with the following content:
 
 ```bash
 CLOUD_NAME=your_cloud_name
